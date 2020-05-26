@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Listado de libros</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+	<h2>Listado de libros</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col">Titulo</th>
+				<th scope="col">Autor</th>
+				<th scope="col">ISBN</th>
+				<th scope="col">Categoria</th>
+				<th scope="col">Fecha Ingreso</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="libro : ${libros}">
+				<td th:text="${libro.sTitulo}"></td>
+				<td th:text="${libro.sAutor}"></td>
+				<td th:text="${libro.isbn}"></td>
+				<td th:text="${libro.categoria.sCategoria}"></td>
+				<td th:text="${#dates.format(libro.fIngreso, 'dd/MM/yyyy hh:mm')}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<a href="/index" ><button class="btn btn-success">Regresar</button></a>
+</body>
+</html>
