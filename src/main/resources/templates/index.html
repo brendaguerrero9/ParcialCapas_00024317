@@ -5,13 +5,14 @@
 <title>Libros</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
+<body class="d-flex flex-column justify-content-center align-items-center" style="height:100vh;">
 
-	<label>Seleccione la  opcion desea realizar</label> <br>
-	<a href="/saveCate"><button class="btn btn-success">Ingresar Categoria</button></a>
-	<a href="/saveB"><button class="btn btn-success">Ingresar Libro</button></a>
-	<a href="/showBooks" ><button class="btn btn-success">Ver Libros</button></a>
+	<h1>Seleccione la  opcion desea realizar</h1>
+	<div>
+	<a href="/saveCate"><button class="form-control mb-1 btn btn-success">Ingresar Categoria</button></a>
+	<a href="/saveB"><button class=" form-control mb-1 btn btn-success">Ingresar Libro</button></a>
+	<a href="/showBooks" ><button class=" form-control mb-1 btn btn-success">Ver Libros</button></a>
 	<h2 th:text="${verify}"></h2>
-	
+	</div>
 </body>
 </html>

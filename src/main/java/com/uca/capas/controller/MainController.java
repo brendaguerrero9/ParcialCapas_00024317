@@ -72,7 +72,7 @@ public class MainController {
 			mav.setViewName("saveCat");
 		} else {
 			categoriaService.save(categoria);
-			mav.addObject("verify", "Se ha ingresado con exito");
+			mav.addObject("verify", "Categoria guardada con exito");
 			mav.setViewName("index");
 		}
 		return mav;
@@ -94,7 +94,7 @@ public class MainController {
 			Date date = new Date();
 			libro.setfIngreso(date);
 			libroService.save(libro);
-			mav.addObject("verify", "Se ha ingresado con exito");
+			mav.addObject("verify", "Libro con exito");
 			mav.setViewName("/index");
 		}
 		return mav;

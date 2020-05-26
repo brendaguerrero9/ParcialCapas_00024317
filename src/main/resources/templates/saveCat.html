@@ -3,16 +3,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insertar Categoria</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
-	<form th:action="@{/saveCategory}" th:object="${categoria}" method="post">
+<body class="w-100 d-flex align-items-center justify-content-center" style="height:100vh;">
+	<form th:action="@{/saveCategory}" th:object="${categoria}" class="w-50" method="post">
 	
 	<label>Nombre Categoria</label>
-	<input  type="text" th:field="*{sCategoria}">
+	<input  type="text" th:field="*{sCategoria}" class="form-control">
 	<span th:errors="*{sCategoria}" style="color : #E81505"></span>
 	<br>
 	
-	<input type="submit" value="Guardar">
+	<input type="submit" class="btn btn-success w-100" value="Guardar">
 	
 	</form>
 </body>

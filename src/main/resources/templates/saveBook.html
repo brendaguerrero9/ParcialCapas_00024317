@@ -3,41 +3,42 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insertar libro</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
+<body class="d-flex flex-column justify-content-center align-items-center w-100 vh-100">
 	<h2>Ingresar Libro</h2>
 
-	<form th:action="@{/saveBook}" th:object="${libro}" method="post">
+	<form th:action="@{/saveBook}" th:object="${libro}" method="post" class="w-75">
 	
 	<label>Titulo</label>
-	<input  type="text" th:field="*{sTitulo}">
+	<input  class="form-control" type="text" th:field="*{sTitulo}">
 	<span th:errors="*{sTitulo}" style="color : #E81505"></span>
 	<br>
 	
 	<label>Autor</label>
-	<input  type="text" th:field="*{sAutor}">
+	<input class="form-control" type="text" th:field="*{sAutor}">
 	<span th:errors="*{sAutor}" style="color : #E81505"></span>
 	<br>
 	
 	<label>ISBN</label>
-	<input  type="text" th:field="*{isbn}">
+	<input class="form-control" type="text" th:field="*{isbn}">
 	<span th:errors="*{isbn}" style="color : #E81505"></span>
 	<br>
 	
 	<label>Categoria</label>
-	<select  th:field="*{categoria.cCategoria}">
+	<select class="form-control"  th:field="*{categoria.cCategoria}">
 	  			<option th:each="cat : ${categorias}" 
 	  					th:value=${cat.cCategoria} 
 	  					th:text="${cat.sCategoria}">
 	  			</option>	
 			</select><br>
 			
-	<label>Estado</label> <br>
+	<label>Estado</label> 
 	<label>Activo</label>
-	<input type="checkbox" th:field=*{estado} th:value="${true}">
+	<input class="" type="checkbox" th:field=*{estado} th:value="${true}">
 	
 	
-	<input type="submit" value="Guardar">
+	<input class="w-100 btn btn-success" type="submit" value="Guardar">
 	</form>
 </body>
 </html>
